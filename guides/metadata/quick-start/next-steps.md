@@ -14,30 +14,19 @@ previous_page_id: metadata/quick-start/update-template
 source_url: >-
   https://github.com/box/developer.box.com/blob/master/content/guides/metadata/1-quick-start/6-next-steps.md
 ---
+# 次の手順
 
-# Next steps
+このクイックスタートガイドが完了しました。ここまで、以下の手順を実行しました。
 
-You've reached the end of this Quick Start guide. By now you should have taken
-the following steps.
+1. 使用できる[すべてのテンプレートのリストを取得](g://metadata/quick-start/list-all/)しました。
+2. 会社固有のデータを保持する[カスタムメタデータテンプレートを作成](g://metadata/quick-start/create-template/)しました。
+3. ファイルに[カスタムメタデータテンプレートを適用](g://metadata/quick-start/create-instance/)し、カスタムデータをファイルに割り当てられるようにしました。
+4. ファイルの[メタデータインスタンスを更新](g://metadata/quick-start/update-instance/)し、ファイルに割り当てられたデータを変更できるようにしました。
+5. [メタデータテンプレートを更新](g://metadata/quick-start/update-template/)し、このテンプレートのすべてのインスタンスに適用されたデータを変更しました。
 
-1. [Listed all templates](g://metadata/quick-start/list-all/)
-available to you.
-2. [Created a custom metadata
-template](g://metadata/quick-start/create-template/) to hold data specific
-to your enterprise.
-3. [Applied a custom metadata
-template](g://metadata/quick-start/create-instance/) to a file, allowing you
-to assign custom data to a file.
-4. [Updated a metadata instance](g://metadata/quick-start/update-instance/)
-on a file, allowing you to change the data assigned to a file.
-5. [Updated a metadata template](g://metadata/quick-start/update-template/)
-and changed the data applied to all instances of this template.
+## 次に行うべきこと
 
-## Next things to do
+Box APIでのメタデータの使用について詳しく知りたい方には、次のリソースをお勧めします。
 
-We recommend the following resource for anyone who wants to learn more about
-using metadata with the Box API.
-
-* [Learn more about metadata scopes](g://metadata/scopes)
-* [Learn more about the different field types](g://metadata/fields) that can be
-used on a template.
+* [メタデータのスコープの詳細](g://metadata/scopes)
+* テンプレートで使用できる[各種フィールドタイプの詳細](g://metadata/fields)

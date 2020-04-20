@@ -16,54 +16,41 @@ previous_page_id: ''
 source_url: >-
   https://github.com/box/developer.box.com/blob/master/content/pages/changelog/index.md
 ---
-
 <!-- alex disable postman-postwoman -->
 
-# Changelog
+# 変更ログ
 
-For historical changelog entries, please see our
-[2019](page://changelog/2019) and
-[2018 release notes](page://changelog/2018).
+過去の変更ログについては、[2019](page://changelog/2019)および[2018](page://changelog/2018)のリリースノートを参照してください。
 
-## 2020-02-03 / Preview SDK `v2.34.0` Released
+## 2020年2月3日/Preview SDK `v2.34.0`のリリース
 
-Version `2.34.0` of the Preview SDK has been released. New JavaScript and CSS
-Preview files have been made available. To adopt new changes, please see the
-[UI Elements manual installation][ui-elements-manual-install] links for Content
-Preview.
+Preview SDKのバージョン`2.34.0`がリリースされ、新しいJavaScriptとCSSのPreviewファイルが使用可能になりました。新しい変更を導入するには、Content Preview用のリンクを[UI Elementsの手動によるインストール][ui-elements-manual-install]に関する記事で確認してください。
 
-Please see the `v2.34.0` [release notes][preview-2.34-release-notes] for a list
-of all feature changes.
+機能の変更点の全一覧については、`v2.34.0`の[リリースノート][preview-2.34-release-notes]を参照してください。
 
-## 2020-01-22 / Preview SDK `v2.33.1` Released
+## 2020年1月22日/Preview SDK `v2.33.1`のリリース
 
-Version `2.33.1` of the Preview SDK has been released. New JavaScript and CSS
-Preview files have been made available. To adopt new changes, please see the
-[UI Elements manual installation][ui-elements-manual-install] links for Content
-Preview.
+Preview SDKのバージョン`2.33.1`がリリースされ、新しいJavaScriptとCSSのPreviewファイルが使用可能になりました。新しい変更を導入するには、Content Preview用のリンクを[UI Elementsの手動によるインストール][ui-elements-manual-install]に関する記事で確認してください。
 
-Please see the `v2.33.1` [release notes][preview-2.33-release-notes] for a list
-of all feature changes.
+機能の変更点の全一覧については、`v2.33.1`の[リリースノート][preview-2.33-release-notes]を参照してください。
 
-## 2020-01-20 / Refreshed Postman Collection & Quick Start
+## 2020年1月20日/Postmanコレクションとクイックスタートを更新
 
-The Box Postman collection has been updated with new features and an integrated
-quick-start guide. Key features include:
+Box Postmanコレクションは、新機能と、統合されたクイックスタートガイドによって更新されました。主な機能は以下のとおりです。
 
-* An end-to-end [Postman quick-start guide][postman-quick-start-guide] that
-  helps users to install Postman, set up a Box App, and load their API
-  credentials into Postman.
-* A [restructured Postman collection][postman-collection] for the Box APIs that
-  automatically detects when API credentials have expired and offers integrated
-  solutions for refreshing these credentials when needed.
+* エンドツーエンドの[Postmanクイックスタートガイド][postman-quick-start-guide]。これは、ユーザーがPostmanのインストール、Boxアプリの設定、PostmanへのAPI資格情報の読み込みを行う際に役立ちます。
+* Box API用に[再編成されたPostmanコレクション][postman-collection]。これにより、API資格情報の期限切れが自動的に検出され、必要に応じてこれらの資格情報を更新するための統合ソリューションが提供されます。
 
-The [legacy Postman collection][legacy-postman-collection] will remain available
-for the foreseeable future.
+しばらくの間は[従来のPostmanコレクション][legacy-postman-collection]も引き続きご利用いただけます。
 
 [postman-quick-start-guide]: g://tooling/postman/quick-start
+
 [postman-collection]: g://tooling/postman/install
+
 [legacy-postman-collection]: g://tooling/postman/legacy
 
 [ui-elements-manual-install]: g://embed/ui-elements/installation/#manual-installation
+
 [preview-2.34-release-notes]: https://github.com/box/box-content-preview/releases/tag/v2.34.0
+
 [preview-2.33-release-notes]: https://github.com/box/box-content-preview/releases/tag/v2.33.1

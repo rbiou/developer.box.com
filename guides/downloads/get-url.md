@@ -21,22 +21,16 @@ previous_page_id: downloads/file-version
 source_url: >-
   https://github.com/box/developer.box.com/blob/master/content/guides/downloads/get-url.md
 ---
+# ダウンロードURLの取得
 
-# Get Download URL
+Box公式SDKでは、ファイルのダウンロード時にバイナリデータが返されます。代わりにデータのダウンロードURLを取得する場合は、SDKの以下のメソッドを使用します。
 
-The official Box SDKs return the binary data when downloading a file. To get the
-download URL for the data instead, use the following SDK methods.
-
-<Samples id='get_files_id_content' variant='get_url' >
+<Samples id="get_files_id_content" variant="get_url">
 
 </Samples>
 
-## Download URL expiry
+## ダウンロードURLの有効期限
 
-Although this download URL can be passed to a user's browser to allow them to
-download the file, the URL does expire and should be requested again for any
-further downloads. In most cases the download URL is valid for 15 minutes, after
-which a new URL needs to be requested. This expiration time may be subject to
-change without any prior notification.
+このダウンロードURLは、ファイルのダウンロードを許可するためにユーザーのブラウザに渡すことができますが、このURLが期限切れになった後でダウンロードするには再度リクエストする必要があります。ほとんどの場合、ダウンロードURLは15分間有効です。その後、新しいURLをリクエストする必要があります。この有効期限は、事前の通知なしに変更される場合があります。
 
 [api]: e://get_files_id_content
