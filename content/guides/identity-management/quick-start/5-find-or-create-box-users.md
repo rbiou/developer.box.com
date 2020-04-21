@@ -3,7 +3,7 @@ type: quick-start
 hide_in_page_nav: true
 ---
 
-# Connect Okta to Box Users
+# Find or create Box app users
 
 At this point we have application code that will handle traffic from users
 visiting, forward them to Okta to login, provide Okta user information, before
@@ -20,6 +20,7 @@ This section will cover the final Box components:
 Before validating users we need a method for creating an associated Box user
 account if one doesn't already exist for the Okta user.
 
+<<<<<<< HEAD:content/guides/sso/quick-start/5-box-users.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -35,6 +36,9 @@ account if one doesn't already exist for the Okta user.
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
+=======
+<Choice option='programming.platform' value='node' color='none'>
+>>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/5-find-or-create-box-users.md
 
 In your local application directory, load the `server.js` file created in
 step 1.
@@ -43,7 +47,6 @@ Add the following `box` object into the file and save.
 
 ```js
   const box = (() => {
-    // Instantiate new Box client
     const configJSON = JSON.parse(fs.readFileSync(path.resolve(__dirname, './../config.json')));
     const sdk = boxSDK.getPreconfiguredInstance(configJSON);
     const client = sdk.getAppAuthClient('enterprise');
@@ -52,12 +55,10 @@ Add the following `box` object into the file and save.
     let userId = '';
     let userClient;
 
-    // Validate whether an app user already exists for the Okta ID
     function validateUser(userInfo) {
       // TODO: VALIDATE USER
     }
 
-    // Create a new app user if an Okta record doesn't already exist
     function createUser() {
       // TODO: CREATE USER
     }
@@ -69,7 +70,7 @@ Add the following `box` object into the file and save.
   })();
 ```
 
-This object defines a number of definitions:
+This object adds defines a number of items:
 
 * Configuration: A new instance of the Box Node SDK is instantiated and made
  available to the object functions, along with a number of variables.
@@ -84,7 +85,6 @@ the following code.
 ```js
   const spaceAmount = 1073741824;   // ~ 1gb
 
-  // Create app user
   client.enterprise.addAppUser(
     this.oktaRecord.name, 
     {
@@ -101,7 +101,7 @@ This code will create a new Box app user and will set the
 which will define the binding between the two user records.
 
 </Choice>
-<Choice option='programming.platform' value='java' color='white'>
+<Choice option='programming.platform' value='java' color='none'>
 
 In your local application directory, load the
 `/src/main/java/com/box/sample/Application.java` file created in step 1, or
@@ -115,7 +115,7 @@ Within the `public class Application` definition, add the following methods:
   }
 
   static String createUser(OidcUser user) {
-    # TODO: CREATE USER
+    // TODO: CREATE USER
   }
 ```
 
@@ -131,7 +131,6 @@ With those methods defined, replace `# TODO: CREATE USER` with the following
 code:
 
 ```java
-  // No user found, create new app user from Okta record
   String oktaName = (String) user.getAttributes().get("name");
   Object oktaSub = user.getAttributes().get("sub");
 
@@ -147,7 +146,7 @@ This code will create a new Box app user and will set the
 which will define the binding between the two user records.
 
 </Choice>
-<Choice option='programming.platform' value='python' color='blue'>
+<Choice option='programming.platform' value='python' color='none'>
 
 In your local application directory, load the `server.py` file created in step
 1.
@@ -189,7 +188,6 @@ the following code.
   uid = ouser.id
   space = 1073741824
 
-  # Create app user
   user = self.box_client.create_user(user_name, None, space_amount=space, external_app_user_id=uid)
   print(f'user {user_name} created')
 ```
@@ -199,6 +197,12 @@ This code will create a new Box app user and will set the
 which will define the binding between the two user records.
 
 </Choice>
+<Choice option='programming.platform' unset color='none'>
+  <Message danger>
+    # Incomplete previous step
+    Please select a preferred language / framework in step 1 to get started.
+  </Message>
+</Choice>
 
 ## Validate Okta Users
 
@@ -207,6 +211,7 @@ defining the code for validating whether an Okta user record has an associated
 Box user record by searching all Box enterprise users for the associated
 `external_app_user_id`.
 
+<<<<<<< HEAD:content/guides/sso/quick-start/5-box-users.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -222,6 +227,9 @@ Box user record by searching all Box enterprise users for the associated
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
+=======
+<Choice option='programming.platform' value='node' color='none'>
+>>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/5-find-or-create-box-users.md
 
 Replace the `// TODO: VALIDATE USER` comment with the following:
 
@@ -251,7 +259,7 @@ If not found, we call the `createUser` function we defined in the last section
 to create a new Box user with that `external_app_user_id` association.
 
 </Choice>
-<Choice option='programming.platform' value='java' color='white'>
+<Choice option='programming.platform' value='java' color='none'>
 
 Replace the `// TODO: VALIDATE USER` comment with the following:
 
@@ -296,7 +304,7 @@ If not found, we call the `createUser` function we defined in the last section
 to create a new Box user with that `external_app_user_id` association.
 
 </Choice>
-<Choice option='programming.platform' value='python' color='blue'>
+<Choice option='programming.platform' value='python' color='none'>
 
 Replace the `# TODO: VALIDATE USER` comment with the following:
 
@@ -331,6 +339,12 @@ If not found, we call the `createUser` function we defined in the last section
 to create a new Box user with that `external_app_user_id` association.
 
 </Choice>
+<Choice option='programming.platform' unset color='none'>
+  <Message danger>
+    # Incomplete previous step
+    Please select a preferred language / framework in step 1 to get started.
+  </Message>
+</Choice>
 
 ## Make Authenticated Box User Calls
 
@@ -340,6 +354,7 @@ an access token specifically
 API calls, then make a call to get the current user to ensure that everything
 is working and that we have a valid user access token.
 
+<<<<<<< HEAD:content/guides/sso/quick-start/5-box-users.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -355,12 +370,14 @@ is working and that we have a valid user access token.
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
+=======
+<Choice option='programming.platform' value='node' color='none'>
+>>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/5-find-or-create-box-users.md
 
 Replace `// TODO: MAKE AUTHENTICATED USER CALL` from the previous section with
 the following:
 
 ```js
-  // User found, get user ID and fetch user token
   this.userId = result.entries[0].id;
   this.userClient = sdk.getAppAuthClient('user', this.userId);
 
@@ -376,7 +393,7 @@ user with the user client object, which should return the user profile
 information for the Okta associated Box app user.
 
 </Choice>
-<Choice option='programming.platform' value='java' color='white'>
+<Choice option='programming.platform' value='java' color='none'>
 <!-- markdownlint-disable line-length -->
 
 Replace `// TODO: MAKE AUTHENTICATED USER CALL` from the previous section with
@@ -404,7 +421,7 @@ information for the Okta associated Box app user.
 
 <!-- markdownlint-enable line-length -->
 </Choice>
-<Choice option='programming.platform' value='python' color='blue'>
+<Choice option='programming.platform' value='python' color='none'>
 
 Replace `# TODO: MAKE AUTHENTICATED USER CALL` from the previous section with
 the following:
@@ -427,6 +444,16 @@ information for the Okta associated Box app user.
 
 </Choice>
 
+<<<<<<< HEAD:content/guides/sso/quick-start/5-box-users.md
+=======
+<Choice option='programming.platform' unset color='none'>
+  <Message danger>
+    # Incomplete previous step
+    Please select a preferred language / framework in step 1 to get started.
+  </Message>
+</Choice>
+
+>>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/5-find-or-create-box-users.md
 ## Summary
 
 * You've validated whether an Okta user exists as a Box user.

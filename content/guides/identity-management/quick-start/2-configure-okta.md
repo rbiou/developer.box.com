@@ -3,15 +3,15 @@ type: quick-start
 hide_in_page_nav: true
 ---
 
-# Setup Okta Application
-
-<ImageFrame noborder center shadow>
-  ![Okta Application Dashboard](./img/okta-applications.png)
-</ImageFrame>
+# Configure Okta
 
 Our next step in the Okta / Box integration is to create and configure the Okta
 application and users, then extract a few pieces of information that we will
 need to connect to Okta in our application.
+
+<ImageFrame noborder center shadow>
+  ![Okta Application Dashboard](./img/okta-applications.png)
+</ImageFrame>
 
 For this tutorial we will be starting with a blank Okta application and user
 dashboard to avoid any negative effects on existing installations that may be
@@ -26,21 +26,21 @@ After logging in, you should see the Okta dashboard. Click on the **Admin**
 button at the top right.
 
 <ImageFrame noborder center shadow>
-  ![Okta Application Dashboard](./img/okta-qs-step1-dashboard.png)
+  ![Okta Application Dashboard](./img/okta-qs-step2-dashboard.png)
 </ImageFrame>
 
 You should now see the admin panel. Click on the **Applications** option at the
 top.
 
 <ImageFrame noborder center shadow>
-  ![Okta Admin Dashboard](./img/okta-qs-step1-admin-dashboard.png)
+  ![Okta Admin Dashboard](./img/okta-qs-step2-admin-dashboard.png)
 </ImageFrame>
 
 On the application page, click the **Add Application** button. Select **Web**
 as the application type and click the **Next** button.
 
 <ImageFrame noborder center shadow>
-  ![Okta App Types](./img/okta-qs-step1-app-type.png)
+  ![Okta App Types](./img/okta-qs-step2-app-type.png)
 </ImageFrame>
 
 Okta employs both [OAuth 2][oauth2] and [OpenID Connect][openid-connect] (OIDC)
@@ -57,6 +57,7 @@ change.
 
 Fill out the application details with the following configuration settings:
 
+<<<<<<< HEAD:content/guides/sso/quick-start/2-setup-okta.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -72,6 +73,9 @@ Fill out the application details with the following configuration settings:
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
+=======
+<Choice option='programming.platform' value='node' color='none'>
+>>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/2-configure-okta.md
 
 * Name: Any
 * Base URIs: `http://localhost:3000/`
@@ -79,8 +83,12 @@ Fill out the application details with the following configuration settings:
 * Logout redirect URIs: `http://localhost:3000/logout`
 * Grant type allowed: Only **Authorization Code** selected
 
+<ImageFrame noborder center shadow>
+  ![Okta App Configuration](./img/okta-qs-step2-appconfig-node.png)
+</ImageFrame>
+
 </Choice>
-<Choice option='programming.platform' value='java' color='white'>
+<Choice option='programming.platform' value='java' color='none'>
 
 * Name: Any
 * Base URIs: `http://localhost:8080/`
@@ -88,8 +96,12 @@ Fill out the application details with the following configuration settings:
 * Logout redirect URIs: `http://localhost:8080/logout`
 * Grant type allowed: Only **Authorization Code** selected
 
+<ImageFrame noborder center shadow>
+  ![Okta App Configuration](./img/okta-qs-step2-appconfig-java.png)
+</ImageFrame>
+
 </Choice>
-<Choice option='programming.platform' value='python' color='blue'>
+<Choice option='programming.platform' value='python' color='none'>
 
 * Name: Any
 * Base URIs: `http://127.0.0.1:5000/`
@@ -97,6 +109,16 @@ Fill out the application details with the following configuration settings:
 * Logout redirect URIs: `http://127.0.0.1:5000/logout`
 * Grant type allowed: Only **Authorization Code** selected
 
+<ImageFrame noborder center shadow>
+  ![Okta App Configuration](./img/okta-qs-step2-appconfig-python.png)
+</ImageFrame>
+
+</Choice>
+<Choice option='programming.platform' unset color='none'>
+  <Message danger>
+    # Incomplete previous step
+    Please select a preferred language / framework in step 1 to get started.
+  </Message>
 </Choice>
 
 Click the **Done** button to create the application and be dropped on to the
@@ -117,9 +139,10 @@ Depending on the language and framework previously chosen, we'll set up the
 appropriate configuration files.
 
 <ImageFrame noborder center shadow>
-  ![Okta Org URL](./img/okta-qs-step1-org-url.png)
+  ![Okta Org URL](./img/okta-qs-step2-org-url.png)
 </ImageFrame>
 
+<<<<<<< HEAD:content/guides/sso/quick-start/2-setup-okta.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -135,6 +158,9 @@ appropriate configuration files.
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
+=======
+<Choice option='programming.platform' value='node' color='none'>
+>>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/2-configure-okta.md
 * Open `config.json` within the local application directory in your preferred
  editor.
 * Update the following line items with the appropriate Okta configuration info:
@@ -145,7 +171,7 @@ appropriate configuration files.
   * `oktaOrgUrl`: Obtained from the top right of the main admin dashboard page.
 * Save the file.
 </Choice>
-<Choice option='programming.platform' value='java' color='white'>
+<Choice option='programming.platform' value='java' color='none'>
 * Open the `/src/main/resources/application.properties` file and update the
  following lines:
   * `okta.oauth2.issuer`: Your Org URL, obtained from the top right of the main
@@ -158,7 +184,7 @@ appropriate configuration files.
    section of the application general settings.
 * Save the file
 </Choice>
-<Choice option='programming.platform' value='python' color='blue'>
+<Choice option='programming.platform' value='python' color='none'>
 In addition to the standard configuration information for the org and app, the
 Python / Flask integration requires an additional auth token.
 
@@ -210,6 +236,16 @@ Lastly, update the Flask configuration file
 
 </Choice>
 
+<<<<<<< HEAD:content/guides/sso/quick-start/2-setup-okta.md
+=======
+<Choice option='programming.platform' unset color='none'>
+  <Message danger>
+    # Incomplete previous step
+    Please select a preferred language / framework in step 1 to get started.
+  </Message>
+</Choice>
+
+>>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/2-configure-okta.md
 ## Create a User
 
 Our last step in the Okta setup is to create a test user that we will use to

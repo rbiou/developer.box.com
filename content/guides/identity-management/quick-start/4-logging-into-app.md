@@ -3,7 +3,7 @@ type: quick-start
 hide_in_page_nav: true
 ---
 
-# Create Okta Login Flow
+# Logging into the app with Okta
 
 With the Okta, Box, and basic application set up, we can turn our attention to
 the first step in the application code flow, the Okta login.
@@ -21,6 +21,7 @@ This section will walk you through:
 
 ## Set up the Skeleton
 
+<<<<<<< HEAD:content/guides/sso/quick-start/4-okta-login.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -36,26 +37,26 @@ This section will walk you through:
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
+=======
+<Choice option='programming.platform' value='node' color='none'>
+>>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/4-logging-into-app.md
 In your local application directory, load the `server.js` file created in
 step 1.
 
-Copy the following basic application structure into the file and save. 
+Start by copying the following package definitions and configuration
+information into the file.
 
 ```js
-  const session = require('express-session');               // Express sessions
-  const { ExpressOIDC } = require('@okta/oidc-middleware'); // Express OIDC
-  const bodyParser = require('body-parser')                 // Body Parser
-  const boxSDK = require('box-node-sdk');                   // Box SDK
-  const config = require('./config.js')                     // Keys and config
-  const express = require('express')();                     // Express
-  const http = require('http');                             // HTTP server
-  const path = require('path');                             // Path for directory
-  const fs = require('fs');                                 // File system
+  const session = require('express-session');
+  const { ExpressOIDC } = require('@okta/oidc-middleware');
+  const bodyParser = require('body-parser');
+  const boxSDK = require('box-node-sdk');
+  const config = require('./config.js');
+  const express = require('express')();
+  const http = require('http');
+  const path = require('path');
+  const fs = require('fs');
 
-  /*********************************************************************
-  * Configuration
-  *********************************************************************/
-  // session support is required to use ExpressOIDC
   express.use(session({
     secret: 'this should be secure',
     resave: true,
@@ -75,19 +76,29 @@ Copy the following basic application structure into the file and save.
   express.use(bodyParser.json());
   express.use(bodyParser.urlencoded({
     extended: true
-  })); 
+  }));
+```
 
-  /*********************************************************************
-  * Routes
-  *********************************************************************/
+This sets up the Express configuration and Okta OIDC connector
+information. Express is set to use the OIDC connector and the Okta
+information that we saved in step 2 of this quick start is used to configure
+the connector for our Okta integration.
+
+Now add the routing details.
+
+```js
   // Redirect to Okta login
   express.get('/', (req, res) => {
     // TODO: HANDLE ROUTE
   });
+```
 
-  /*********************************************************************
-  * Server
-  *********************************************************************/
+This defines the entry route for our application. When a user attempts to
+visit our application root (`/`) the code within this route will be run.
+
+Lastly, add the Express server initialization to listen for traffic.
+
+```js
   // Create server
   const port = process.env.PORT || 3000;
   http.createServer(express).listen(port, () => {
@@ -95,23 +106,13 @@ Copy the following basic application structure into the file and save.
   });
 ```
 
-Beyond the package definitions, this skeleton will handle the following:
-
-* Configuration: Sets up the Express configuration and Okta OIDC connector
- information. Express is set to use the OIDC connector and the Okta
- information that we saved in step 2 of this quick start is used to configure
- the connector for our Okta integration.
-* Routes: Defines the entry route for our application. When a user attempts to
- visit our application root (`/`) the code within this route will be run.
-* Server: Initialized the Express server to listen for traffic.
-
 </Choice>
-<Choice option='programming.platform' value='java' color='white'>
+<Choice option='programming.platform' value='java' color='none'>
 In your local application directory, load the
 `/src/main/java/com/box/sample/Application.java` file created in step 1, or
 similar directory if an alternate application name was used.
 
-Copy the following basic application structure into the file and save.
+Copy the following basic application structure into the file.
 
 ```java
   package com.box.okta.sample;
@@ -141,37 +142,47 @@ Copy the following basic application structure into the file and save.
   @RestController
   @EnableAutoConfiguration
   public class Application {
-    // Box API connection
     static BoxDeveloperEditionAPIConnection api;
 
-    @RequestMapping("/")
-    String home(@AuthenticationPrincipal OidcUser user) throws IOException {
-      // TODO: HANDLE ROUTE
-    }
+    // TODO: SET ROUTE
 
-    public static void main(String[] args) {
-      SpringApplication.run(Application.class, args);
-    }
+    // TODO: INITIALIZE SERVER
   }
 ```
 
-Beyond the import statements, this skeleton will handle the following:
+This sets up the needed imports, the `Application` class, and a standard shared
+Box API connection attribute, to be defined in the next step.
 
-* Box API connection: A standard shared Box API connection attribute, to be
- defined in the next step.
-* Routes: Defines the entry route for our application. When a user attempts to
- visit our application root (`/`) in a logged out state, the OIDC connector
- will automatically push them through the Okta login, so we don't need to setup
- a redirect. When the user is in a logged in state, the code within this route
- will be run.
-* Server: Initialized the Spring Boot server to listen for traffic.
+Replace `// TODO: SET ROUTE` with the following.
+
+```java
+  @RequestMapping("/")
+  String home(@AuthenticationPrincipal OidcUser user) throws IOException {
+    // TODO: HANDLE ROUTE
+  }
+```
+
+The route mapping defines the entry route for our application. When a user
+attempts to visit our application root (`/`) in a logged out state, the OIDC
+connector will automatically push them through the Okta login, so we don't need
+to setup a redirect. When the user is in a logged in state, the code within
+this route will be run.
+
+Replace `// TODO: INITIALIZE SERVER` with the following to initialize the
+Spring Boot server to listen for traffic.
+
+```java
+  public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
+```
 
 </Choice>
-<Choice option='programming.platform' value='python' color='blue'>
+<Choice option='programming.platform' value='python' color='none'>
 In your local application directory, load the `server.py` file created in step
 1.
 
-Copy the following basic application structure into the file and save.
+Copy the following basic application structure into the file.
 
 ```python
   from flask import Flask, redirect, g, url_for
@@ -195,12 +206,28 @@ Copy the following basic application structure into the file and save.
 
   oidc = OpenIDConnect(app)
   okta_client = UsersClient(config.okta_org_url, config.okta_auth_token)
+```
+
+This sets up the Flask configuration, Okta client, and Okta OIDC
+connector information. Flask is set to use the OIDC connector and the Okta
+information that we saved in step 2 of this quick start is used to configure
+the connector for our Okta integration.
+
+Next, add a `before_request` definition to be run before route handling is
+engaged. We'll be using this to capture our Okta user information, if available.
+
+```python
 
   # Fetch Okta user record if logged in
   @app.before_request
   def before_request():
     # TODO: HANDLE BEFORE REQUEST
+```
 
+Lastly, define the entry route for our application, as well as a `box_auth`
+route.
+
+```python
   # Main application route
   @app.route('/')
   def start():
@@ -215,20 +242,16 @@ Copy the following basic application structure into the file and save.
   return 'Complete'
 ```
 
-Beyond the import statements, this skeleton will handle the following:
+When a user attempts to visit our application root (`/`) the code
+within this route will be run. When we validate an Okta user, the code within
+the `box_auth` route will be run.
 
-* Configuration: Sets up the Flask configuration, Okta client, and Okta OIDC
- connector information. Flask is set to use the OIDC connector and the Okta
- information that we saved in step 2 of this quick start is used to configure
- the connector for our Okta integration.
-* Before request: Defines code that should be run before route handling is
- engaged. We'll be using this to capture our Okta user information, if
- available.
-* Routes: Defines the entry route for our application, as well as a `box_auth`
- route. When a user attempts to visit our application root (`/`) the code
- within this route will be run. When we validate an Okta user, the code within
- the `box_auth` route will be run.
-
+</Choice>
+<Choice option='programming.platform' unset color='none'>
+  <Message danger>
+    # Incomplete previous step
+    Please select a preferred language / framework in step 1 to get started.
+  </Message>
 </Choice>
 
 ## Setup Application Route
@@ -236,6 +259,7 @@ Beyond the import statements, this skeleton will handle the following:
 We now need to define the code that will run when our main route (`/`) is
 engaged.
 
+<<<<<<< HEAD:content/guides/sso/quick-start/4-okta-login.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -251,6 +275,9 @@ engaged.
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
+=======
+<Choice option='programming.platform' value='node' color='none'>
+>>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/4-logging-into-app.md
 
 Replace `// TODO: HANDLE ROUTE` in the main route with the following code.
 
@@ -284,7 +311,7 @@ connector will automatically handle this route and force the user through to
 the Okta login.
 
 </Choice>
-<Choice option='programming.platform' value='java' color='white'>
+<Choice option='programming.platform' value='java' color='none'>
 
 Replace `// TODO: HANDLE ROUTE` in the main route with the following code.
 
@@ -300,7 +327,7 @@ We pass that user object to a `validateUser` function, which we'll define in
 the next step.
 
 </Choice>
-<Choice option='programming.platform' value='python' color='blue'>
+<Choice option='programming.platform' value='python' color='none'>
 
 Replace `// TODO: HANDLE BEFORE REQUEST` in the main route with the following code.
 
@@ -339,6 +366,16 @@ the next step.
 
 </Choice>
 
+<<<<<<< HEAD:content/guides/sso/quick-start/4-okta-login.md
+=======
+<Choice option='programming.platform' unset color='none'>
+  <Message danger>
+    # Incomplete previous step
+    Please select a preferred language / framework in step 1 to get started.
+  </Message>
+</Choice>
+
+>>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/4-logging-into-app.md
 ## Summary
 
 * You set up the skeleton routes and configuration for Okta.
