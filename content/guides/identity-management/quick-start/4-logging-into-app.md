@@ -21,7 +21,6 @@ This section will walk you through:
 
 ## Set up the Skeleton
 
-<<<<<<< HEAD:content/guides/sso/quick-start/4-okta-login.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -37,9 +36,7 @@ This section will walk you through:
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
-=======
-<Choice option='programming.platform' value='node' color='none'>
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/4-logging-into-app.md
+
 In your local application directory, load the `server.js` file created in
 step 1.
 
@@ -259,7 +256,6 @@ the `box_auth` route will be run.
 We now need to define the code that will run when our main route (`/`) is
 engaged.
 
-<<<<<<< HEAD:content/guides/sso/quick-start/4-okta-login.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -275,9 +271,6 @@ engaged.
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
-=======
-<Choice option='programming.platform' value='node' color='none'>
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/4-logging-into-app.md
 
 Replace `// TODO: HANDLE ROUTE` in the main route with the following code.
 
@@ -366,8 +359,6 @@ the next step.
 
 </Choice>
 
-<<<<<<< HEAD:content/guides/sso/quick-start/4-okta-login.md
-=======
 <Choice option='programming.platform' unset color='none'>
   <Message danger>
     # Incomplete previous step
@@ -375,7 +366,6 @@ the next step.
   </Message>
 </Choice>
 
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/4-logging-into-app.md
 ## Summary
 
 * You set up the skeleton routes and configuration for Okta.

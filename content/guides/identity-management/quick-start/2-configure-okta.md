@@ -57,7 +57,6 @@ change.
 
 Fill out the application details with the following configuration settings:
 
-<<<<<<< HEAD:content/guides/sso/quick-start/2-setup-okta.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -73,9 +72,6 @@ Fill out the application details with the following configuration settings:
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
-=======
-<Choice option='programming.platform' value='node' color='none'>
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/2-configure-okta.md
 
 * Name: Any
 * Base URIs: `http://localhost:3000/`
@@ -142,7 +138,6 @@ appropriate configuration files.
   ![Okta Org URL](./img/okta-qs-step2-org-url.png)
 </ImageFrame>
 
-<<<<<<< HEAD:content/guides/sso/quick-start/2-setup-okta.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -158,9 +153,7 @@ appropriate configuration files.
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
-=======
-<Choice option='programming.platform' value='node' color='none'>
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/2-configure-okta.md
+
 * Open `config.json` within the local application directory in your preferred
  editor.
 * Update the following line items with the appropriate Okta configuration info:
@@ -236,8 +229,6 @@ Lastly, update the Flask configuration file
 
 </Choice>
 
-<<<<<<< HEAD:content/guides/sso/quick-start/2-setup-okta.md
-=======
 <Choice option='programming.platform' unset color='none'>
   <Message danger>
     # Incomplete previous step
@@ -245,7 +236,6 @@ Lastly, update the Flask configuration file
   </Message>
 </Choice>
 
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/2-configure-okta.md
 ## Create a User
 
 Our last step in the Okta setup is to create a test user that we will use to

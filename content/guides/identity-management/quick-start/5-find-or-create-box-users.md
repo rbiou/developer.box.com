@@ -20,7 +20,6 @@ This section will cover the final Box components:
 Before validating users we need a method for creating an associated Box user
 account if one doesn't already exist for the Okta user.
 
-<<<<<<< HEAD:content/guides/sso/quick-start/5-box-users.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -36,9 +35,6 @@ account if one doesn't already exist for the Okta user.
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
-=======
-<Choice option='programming.platform' value='node' color='none'>
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/5-find-or-create-box-users.md
 
 In your local application directory, load the `server.js` file created in
 step 1.
@@ -211,7 +207,6 @@ defining the code for validating whether an Okta user record has an associated
 Box user record by searching all Box enterprise users for the associated
 `external_app_user_id`.
 
-<<<<<<< HEAD:content/guides/sso/quick-start/5-box-users.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -227,9 +222,6 @@ Box user record by searching all Box enterprise users for the associated
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
-=======
-<Choice option='programming.platform' value='node' color='none'>
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/5-find-or-create-box-users.md
 
 Replace the `// TODO: VALIDATE USER` comment with the following:
 
@@ -354,7 +346,6 @@ an access token specifically
 API calls, then make a call to get the current user to ensure that everything
 is working and that we have a valid user access token.
 
-<<<<<<< HEAD:content/guides/sso/quick-start/5-box-users.md
 <Grid columns='3'>
   <Choose option='programming.platform' value='node' color='blue'>
     # Node/Express
@@ -370,9 +361,6 @@ is working and that we have a valid user access token.
 </Grid>
 
 <Choice option='programming.platform' value='node' color='blue'>
-=======
-<Choice option='programming.platform' value='node' color='none'>
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/5-find-or-create-box-users.md
 
 Replace `// TODO: MAKE AUTHENTICATED USER CALL` from the previous section with
 the following:
@@ -444,8 +432,6 @@ information for the Okta associated Box app user.
 
 </Choice>
 
-<<<<<<< HEAD:content/guides/sso/quick-start/5-box-users.md
-=======
 <Choice option='programming.platform' unset color='none'>
   <Message danger>
     # Incomplete previous step
@@ -453,7 +439,6 @@ information for the Okta associated Box app user.
   </Message>
 </Choice>
 
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/5-find-or-create-box-users.md
 ## Summary
 
 * You've validated whether an Okta user exists as a Box user.

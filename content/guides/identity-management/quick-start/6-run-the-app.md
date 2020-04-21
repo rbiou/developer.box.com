@@ -114,9 +114,6 @@ access process.
 * [User deprovisioning](g://users/deprovision/) best practices cleaning up
  inactive users and transferring user content to another account.
 * [Uploading content](g://uploads/) into Box, including running preflight
-<<<<<<< HEAD:content/guides/sso/quick-start/6-run-sample.md
- checks and large file (chunked) uploading.
-=======
  checks and large file (chunked) uploading.
 
 [step1]: g://identity-management/quick-start/scaffold-application-code/
@@ -125,4 +122,3 @@ access process.
 [step4]: g://identity-management/quick-start/logging-into-app/
 [step5]: g://identity-management/quick-start/find-or-create-box-users/
 [step6]: g://identity-management/quick-start/run-the-app/
->>>>>>> a979558188ce476714b75f77dc59331eff1cd789:content/guides/identity-management/quick-start/6-run-the-app.md

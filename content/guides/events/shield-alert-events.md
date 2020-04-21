@@ -52,7 +52,7 @@ to `SHIELD_ALERT`.
 Information about the specific type of `SHIELD_ALERT` that triggered the event
 will be supplied within the `additional_details` object.
 
-## Suspicious Locations Alert
+## Suspicious locations alert
 
 A suspicious locations alert will be produced when an account within the
 enterprise has been accessed from a suspicious location. It can be identified
@@ -103,7 +103,7 @@ The `additional_details` payload will provide the following details.
   }
 ```
 
-## Suspicious Sessions Alert
+## Suspicious sessions alert
 
 A suspicious locations alert will be produced when abnormal behavior has been
 detected in the account session. It can be identified by the `Suspicious
@@ -183,7 +183,7 @@ The `additional_details` payload will provide the following details.
 ```
 <!-- markdownlint-enable line-length -->
 
-## Anomalous Download Alert
+## Anomalous download alert
 
 A suspicious locations alert will be produced when anomalous content download
 behavior has been detected. It can be identified by the `Anomalous Download`
@@ -239,7 +239,7 @@ The `additional_details` payload will provide the following details.
 ```
 <!-- markdownlint-enable line-length -->
 
-## Malicious Content Alert
+## Malicious content alert
 
 A suspicious locations alert will be produced when malicious content has been
 identified, such as a virus being detected. It can be identified by the
